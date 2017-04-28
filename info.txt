@@ -1,0 +1,5 @@
+since moved to git:
+upgraded to unity 5.6 -- 30min
+fixed small details as compile errors -- 30min
+removed unnecessary script on "Score2" scene that was giving warnings, replaced obsolete methods from some scripts and reformated "principal.wav" audio so it weights 4MB instead of 51MB -- 30min (downloaded audacity, MP3 converter (LAME) plugin, tried different conversion formats and checked audio quality
+configured lighting and baked lights for better performance and visual effect - 30min
