@@ -1,3 +1,4 @@
+Configured Git, uploaded the project that I have been developing on my desktop computer and created a branch for development
 since moved to git:
 upgraded to unity 5.6 -- 30min
 fixed small details as compile errors -- 30min
