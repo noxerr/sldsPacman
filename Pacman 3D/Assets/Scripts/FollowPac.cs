@@ -4,6 +4,7 @@ using System.Collections;
 public class FollowPac : MonoBehaviour {
     public GameObject pacman;
     //private Rigidbody rb;
+    [HideInInspector]
     public Vector3 relativePos;
 
     void LateUpdate()

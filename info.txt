@@ -1,6 +1,63 @@
-Configured Git, uploaded the project that I have been developing on my desktop computer and created a branch for development
-since moved to git:
+CHEATS:
+{Z} Suma una vida al jugador.
+{X} Gana el nivel actual.
+{R} Resetea el nivel actual.
+{C} Mata a pacman.
+{V} Abre la puerta del segundo nivel.
+
+Before uploading project to git:
+
+busqueda de assets (pacman, fantasmas, decoracion...) -- 3h
+
+Niveles:
+Diseño en papel -- 1h
+Creacion de los niveles -- 2h
+Decoracion estilo agua -- 1h
+Creacion de bloques de monedas y paredes-- 3h
+
+Logica del juego:
+Movimiento del jugador -- 1h
+Recoleccion de monedas -- 1h
+Systema de power ups y parpadeo al perder vidas -- 2h
+Deteccion de distintos tipos de terreno (diferentes fisicas como el hielo, mediante materiales) -- 2h
+
+IA:
+Logica de los fantasmas -- 2h
+NavMesh (path finding etc) -- 2h
+
+UI:
+Ui menu principal y diferentes pantallas -- 4h
+Animacion de fondo del menu principal -- 2h
+
+Perfeccionamiento de los niveles y extras:
+Rampa del 2o nivel, que no te permite volver a subir -- 1h
+Transicion de bajar de la planta de arriba a la de abajo y que desaparezca el render -- 1h
+Control de monedas recolectadas -- 30min
+Animacion de abrir la puerta, mover la camara etc -- 2h
+Efectos especiales al acabar los niveles y en creditos -- 2h
+Musica en las diferentes secciones del juego asi como sonidos al recivir un hit -- 2h
+
+Animaciones:
+Animacion de muerto al detectar que no quedan vidas -- 45min
+Animacion pacman/mi avatar al ganar y al moverse -- 1h
+Animacion de la lava moviendose en el 2o nivel mediante shaders -- 1h
+Animacion del score (se va sumando poco a poco hasta que llega a la cantidad obtenida) -- 1h
+
+Configured Git, uploaded the project that I have been developing on my desktop computer and created a branch for development - 45min
+
+TASKS since moved to git:
 upgraded to unity 5.6 -- 30min
 fixed small details as compile errors -- 30min
 removed unnecessary script on "Score2" scene that was giving warnings, replaced obsolete methods from some scripts and reformated "principal.wav" audio so it weights 4MB instead of 51MB -- 30min (downloaded audacity, MP3 converter (LAME) plugin, tried different conversion formats and checked audio quality
-configured lighting and baked lights for better performance and visual effect - 30min
+configured lighting and baked lights for better performance and visual effect - 45min
+added flags for decoration with cloth system on first and second scene - 30min
+created shader without backface culling to render the flag with previous research - 45min
+---------
+Created an avatar with my body and face -- 2h (for fun)
+added this avatar instead of the previous pacman for the first scene -- 30min
+----------
+Debuging, build del juego y revision del codigo -- 4h
+
+----------
+----------
+TOTAL: 49h
