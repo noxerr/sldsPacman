@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class PlayerLogic : MonoBehaviour {
+    [HideInInspector]
     public Rigidbody rb;
     public float constante = 25f;
     public int vidas;
@@ -127,6 +128,12 @@ public class PlayerLogic : MonoBehaviour {
         {
             part.enabled = yesno;
         }
+        SkinnedMeshRenderer[] skinRenders = gameObject.GetComponentsInChildren<SkinnedMeshRenderer>();
+        foreach (SkinnedMeshRenderer part in skinRenders)
+        {
+            part.enabled = yesno;
+        }
+        //para que parpadee la imagen de la vida que hemos perdido
         if (vidas == 2) vida1.enabled = yesno;
         else if (vidas == 1) vida2.enabled = yesno;
         else if (vidas == 0) vida3.enabled = yesno;
@@ -138,7 +145,7 @@ public class PlayerLogic : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.Z)) ++vidas;
         if (Input.GetKeyUp(KeyCode.C)) {
             //parar animacion piernas
-            piernas.enabled = false;
+            if (piernas != null) piernas.enabled = false;
             //para que no se choque por el camino al centro
             boxColider.enabled = false;
             lost = true;
@@ -362,7 +369,7 @@ public class PlayerLogic : MonoBehaviour {
                 if (vidas <= 0)
                 {
                     //parar animacion piernas
-                    piernas.enabled = false;
+                    if (piernas != null) piernas.enabled = false;
                     //para que no se choque por el camino al centro
                     boxColider.enabled = false;
                     lost = true;
@@ -471,7 +478,7 @@ public class PlayerLogic : MonoBehaviour {
             gradosDireccion = 0;
 
             //parar animacion piernas
-            piernas.enabled = false;
+            if (piernas != null) piernas.enabled = false;
             
             //para que no se choque por el camino al centro
             boxColider.enabled = false;

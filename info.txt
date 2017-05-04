@@ -1,5 +1,6 @@
 Configured Git, uploaded the project that I have been developing on my desktop computer and created a branch for development - 30min
-since moved to git:
+
+TASKS since moved to git:
 upgraded to unity 5.6 -- 30min
 fixed small details as compile errors -- 30min
 removed unnecessary script on "Score2" scene that was giving warnings, replaced obsolete methods from some scripts and reformated "principal.wav" audio so it weights 4MB instead of 51MB -- 30min (downloaded audacity, MP3 converter (LAME) plugin, tried different conversion formats and checked audio quality
@@ -7,3 +8,5 @@ configured lighting and baked lights for better performance and visual effect - 
 added flags for decoration with cloth system on first and second scene - 30min
 created shader without backface culling to render the flag with previous research - 30min
 ---------
+Created an avatar with my body and face -- 2h (for fun)
+added this avatar instead of the previous pacman for the first scene -- 15min
