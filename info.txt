@@ -1,3 +1,5 @@
+Unity Version: 5.6.0f3 64bits
+
 CHEATS:
 {Z} Suma una vida al jugador.
 {X} Gana el nivel actual.
@@ -57,7 +59,8 @@ Created an avatar with my body and face -- 2h (for fun)
 added this avatar instead of the previous pacman for the first scene -- 30min
 ----------
 Debuging, build del juego y revision del codigo -- 4h
+Comentar algo de código -- 2h
 
 ----------
 ----------
-TOTAL: 49h
+TOTAL: 51h

@@ -141,6 +141,7 @@ public class PlayerLogic : MonoBehaviour {
 
     void botonesDebug()
     {
+        //configuracion de los botones cheat para pasar los niveles o recuperar vidas o morir
         if (Input.GetKey(KeyCode.R)) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         if (Input.GetKeyUp(KeyCode.Z)) ++vidas;
         if (Input.GetKeyUp(KeyCode.C)) {
@@ -217,6 +218,7 @@ public class PlayerLogic : MonoBehaviour {
 
     void logicaMovimiento()
     {
+        //si estas tocando el suelo, segun la flecha que apretes, te moveras en una direccion u otra
         if (colisionSuelo)
         {
             if (Input.GetKey(KeyCode.LeftArrow))
@@ -303,6 +305,7 @@ public class PlayerLogic : MonoBehaviour {
 
     void gestionRotacionesPacman()
     {
+        //para rotar al player mirando siempre hacia donde camina, de una manera "smooth"
         if (Mathf.Abs(transform.eulerAngles.y - gradosDireccion) > 25)
         {
             timeAux = Mathf.Min(Time.deltaTime * 5f, 25f);
@@ -328,6 +331,7 @@ public class PlayerLogic : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
+        //Comprobamos tipos de colision, monedas, teleport, powerup, enemigo..
         if (col.gameObject.tag == "Pick Up")
         {
             source.PlayOneShot(destroyCoinSound, 1.0f);
@@ -381,6 +385,9 @@ public class PlayerLogic : MonoBehaviour {
                 }
                 else
                 {
+                    //si perdemos vida porque aun nos quedaba, hacemos sonar el efecto del hit
+                    //nos ponemos en god mode (que no nos puedan matar demasiado seguido para poder escapar)
+                    //restamos vida.. etc
                     source.PlayOneShot(damagedSound, 1f);
                     godMode = true;
                     tocaEsconderte = true;
@@ -395,6 +402,8 @@ public class PlayerLogic : MonoBehaviour {
 
     void OnCollisionEnter(Collision collInfo)
     {
+        //aqui se comprueba cada una de las colisiones que puedas tener, si pertenecen a alguno de los siguientes tags
+        //la rampa es para que no te permita subirla, el hielo es para que resvales, etc
         foreach (ContactPoint contact in collInfo.contacts)
         {
             if (contact.otherCollider.gameObject.tag == "Rampa")
@@ -415,10 +424,7 @@ public class PlayerLogic : MonoBehaviour {
                 colisionBajada = true;
             }
             else if (contact.otherCollider.gameObject.tag == "Hielo") colisionHielo = true;
-            /*else if (contact.otherCollider.gameObject.tag == "Agujero")
-            {
-                getC
-            }*/
+
         }
     }
 
@@ -440,6 +446,7 @@ public class PlayerLogic : MonoBehaviour {
 
     void OnCollisionExit(Collision collisionInfo)
     {
+        //Aqui es similar al collision enter pero para anular los efectos
         if (collisionInfo.gameObject.tag == "Terrain") colisionSuelo = false;
         else if (collisionInfo.gameObject.tag == "Rampa")
         {
@@ -460,6 +467,7 @@ public class PlayerLogic : MonoBehaviour {
 
     void AnimacionMuerto()
     {
+        //si pierdes todas las pidas, caes rotando
         transform.Rotate(15 * Time.deltaTime * 8,
             30 * Time.deltaTime * 8, -45 * Time.deltaTime * 8);
     }

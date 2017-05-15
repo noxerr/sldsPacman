@@ -22,10 +22,14 @@ public class EnemyLogic : MonoBehaviour {
     public void startEatenTimer() {
         timeSinceLastEaten = Time.time;
     }
+
     public void startDeathTimer() {
         timeLastDeath = Time.time;
     }
+
     public void killGhost() {
+        //Al matar el fantasma lo desactivamos y empezamos el contador
+        //No eliminamos el gameobject para que mantenga la IA
         timeLastDeath = Time.time;
         gameObject.GetComponent<CapsuleCollider>().enabled = false;
         gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
@@ -35,7 +39,9 @@ public class EnemyLogic : MonoBehaviour {
         fleeIA.enabled = false;
         dead = true;
     }
+
     public void spawnGhost() {
+        //Pasado el tiempo hacemos que reaparezca
         transform.position = SpawnLoc.transform.position;
         gameObject.GetComponent<CapsuleCollider>().enabled = true;
 
@@ -44,6 +50,7 @@ public class EnemyLogic : MonoBehaviour {
         rend.enabled = true;
         dead = false;
     }
+
 	// Update is called once per frame
 	void Update () {
         float d2 = Time.time;
@@ -51,6 +58,7 @@ public class EnemyLogic : MonoBehaviour {
         if (dead && d2 - timeLastDeath > spawnTime) spawnGhost();
         if (!dead)
         {
+            //Segun si tenemos powerup o no, activamos que el fantasma pueda ser comido
             if (canBeEaten)
             {
                 regularIA.enabled = false;

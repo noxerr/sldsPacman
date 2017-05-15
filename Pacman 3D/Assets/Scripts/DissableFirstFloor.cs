@@ -24,6 +24,7 @@ public class DissableFirstFloor : MonoBehaviour {
             pacLogic.tiempoColisionSuelo -= Time.deltaTime;
             if (pacLogic.tiempoColisionSuelo < -0.5f)
             {
+                //desactivamos el render del primer piso y desactivamos el script
                 MeshRenderer[] rend = primerPiso.GetComponentsInChildren<MeshRenderer>();
                 foreach (MeshRenderer mr in rend)
                 {
@@ -37,6 +38,8 @@ public class DissableFirstFloor : MonoBehaviour {
 
     void OnCollisionEnter(Collision collInfo)
     {
+        //Si colisionas con la entrada del 2o piso en el 2o nivel, desactivamos los colliders 
+        //y activamos el cronometro para desactivar el render del primer piso
         haColisionado = true;
         waterCollider.enabled = false;
         baseCollider.enabled = false;
@@ -49,6 +52,7 @@ public class DissableFirstFloor : MonoBehaviour {
 
     void OnCollisionStay(Collision collisionInfo)
     {
+        //le quitamos la velocidad y las colisiones mientras este colisionando
         pacLogic.colisionSuelo = false;
         pacLogic.rb.velocity = Vector3.zero;
     }

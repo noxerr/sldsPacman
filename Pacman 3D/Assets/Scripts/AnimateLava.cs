@@ -15,6 +15,7 @@ public class AnimateLava : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //time += Time.deltaTime;
+        //Sumamos offset a la textura de la lava para crear el efecto de movimiento
         offset.y += Time.deltaTime/4;
         rend.material.SetTextureOffset("_MainTex", offset); 
 	}
